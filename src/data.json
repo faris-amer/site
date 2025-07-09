@@ -1,0 +1,21 @@
+{
+  "projects":{
+    "engineering":[
+      {
+        "id":1,
+        "name":"first physics sim - collisions",
+        "icon":"/projects/icons/firstphysicssim.png"
+      },
+      {
+        "id":2,
+        "name":"first PCB - Power distribution board",
+        "icon":"/projects/icons/PDM1.png"
+      },
+      {
+        "id":3,
+        "name":"WFR24 - EV architecture",
+        "icon":"/projects/icons/WFR24.jpg"
+      }
+    ]
+  }
+}
