@@ -64,6 +64,11 @@
   border: 1px solid white;
 
 }
+
+.project-container > p{
+  font-size: 18px;
+}
+
 .project-container  a{
   color:rgb(50, 171, 241);
 }
