@@ -2,6 +2,7 @@
 
 import Navbar from "../components/navbar"
 import data from "../data.json"
+import Footer from "../components/footer"
 
 export default function Landing(){
   const elements = []
@@ -33,6 +34,7 @@ export default function Landing(){
           {elements}
         </div>
       </main>
+      <Footer/>
     </>
   )
 }

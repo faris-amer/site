@@ -13,11 +13,11 @@ export default function Project(props: any) {
         .then((res) => res.text())
         .then(setMarkdown)
         .catch(() => setMarkdown("Could not load markdown file."));
-      console.log(props.project.id)
+      //console.log(props.project.id)
     }
   }, [props.project.id]);
 
-  console.log(markdown)
+  //console.log(markdown)
   return(
     <div className="project-container">
     <Markdown rehypePlugins={[rehypeRaw]}>{markdown}</Markdown>

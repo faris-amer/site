@@ -20,6 +20,11 @@
         "id":4,
         "name":"Balancing a Pendulum with AI",
         "icon":"/projects/icons/pendulum.png"
+      },
+      {
+        "id":5,
+        "name":"WFR25 distributed ECU",
+        "icon":"/projects/icons/ECU25.png"
       }
     ]
   }

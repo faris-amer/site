@@ -26,7 +26,7 @@ export default function Landing(){
             <a href="#">professional</a>
           </div>
           <div className="bottom">
-            <a href="https://typeintothevoid.com/">contact</a>
+            <a href="/contact">contact</a>
           </div>
         </div>
         <div className="vl"></div>
