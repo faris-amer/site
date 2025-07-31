@@ -40,11 +40,6 @@ export default function Landing(){
           <div className="main-text">
           I'm faris, I like to make things, and talk a lot.
           <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          //////////////// UNDER CONSTRUCTION //////////////////////////////
           </div>
         </div>
       </div>

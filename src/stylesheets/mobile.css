@@ -6,7 +6,8 @@
   width: 85%;
   }
   .main-page > .main-box{
-  height: 85%;
+  height: fit-content;
+  max-height: 85%;
   width: 85%;
   flex-direction: column;
   overflow: hidden;
