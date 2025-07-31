@@ -21,8 +21,8 @@ export default function ProjectPage(){
     <div className="main-box">
       <Project project={project}/>
     </div>
-    </main>
     <Footer />
+    </main>
     </>
   )
 }

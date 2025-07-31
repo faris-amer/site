@@ -3,6 +3,7 @@
 import Navbar from "../components/navbar"
 import data from "../data.json"
 import Footer from "../components/footer"
+import Stars from "../components/backgrounds"
 
 export default function Landing(){
   const elements = []
@@ -28,13 +29,14 @@ export default function Landing(){
 
   return (
     <>
+    <Stars />
       <main className="big-box">
         <Navbar />
         <div className="main-box">
           {elements}
         </div>
+        <Footer/>
       </main>
-      <Footer/>
     </>
   )
 }

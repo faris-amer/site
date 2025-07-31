@@ -1,4 +1,5 @@
 import Navbar from "../components/navbar"
+import Stars from "../components/backgrounds"
 
 export default function Landing(){
   
@@ -17,6 +18,7 @@ export default function Landing(){
   
   return(
     <main className="main-page">
+      <Stars />
       <Navbar />
       <div className="main-box">
         <div className="sidebar">
@@ -36,7 +38,7 @@ export default function Landing(){
           </div>
           <div className="hl"></div>
           <div className="main-text">
-          I'm faris, I like to make things. 
+          I'm faris, I like to make things, and talk a lot.
           <br/>
           <br/>
           <br/>

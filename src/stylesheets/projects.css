@@ -4,25 +4,28 @@
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
+  height: 100%;
 }
 
+.big-box > .navbar{
+  margin-top: 40px;
+}
 .big-box > .main-box{
   display: flex;
   width: 70%;
-  min-width: 700px;
-  height: 700px;
+  max-width: 2000px;
+  height: 80%;
   flex-direction: column;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: rgb(255, 255, 255) black;
   gap: 0px;
-  padding:15px;
+  padding:16px;
   padding-top: 0px;
 }
 
 .project-image{
-  max-width: 250px;
-  max-height: 200px;
+  
   margin-top: 10px;
   overflow: hidden;
   border: 1px solid white;
@@ -47,7 +50,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px;
+  gap: 8%;
   margin-top: 5px;
 }
 
@@ -66,6 +69,16 @@
   border: 1px solid white;
 
 }
+
+.projectEntry{
+  flex-grow: 1;
+  max-width: 25%;
+  min-width: 200px;
+}
+.projectEntry>*{
+  -webkit-tap-highlight-color: transparent;
+}
+
 
 .project-container > p{
   font-size: 18px;

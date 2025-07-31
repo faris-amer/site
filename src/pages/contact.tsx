@@ -52,7 +52,8 @@ export default function Contact(){
     <>
     <main className="main-page">
     <Navbar />
-    <p></p>
+    <div className="hl">--------------------------------</div>
+    email me anything, let's talk
     <div className="contact">
       farisamer569@gmail.com
       <a href="https://www.linkedin.com/in/fwamer/">&nbsp;&nbsp;linkedin</a>
