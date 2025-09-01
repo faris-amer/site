@@ -35,7 +35,9 @@ Now, for the training strategy, I want this to be as simple as possible really. 
 
 The problem we're solving has a solution, a function F(x,y,z, ... ) that takes in some information about the environment, and outputs an instruction: moving the pendulum some distance in some direction. We create a base for this function (a network) that can turn many inputs into one output:
 
-![](/projects/4/image3.png) Each input gets a bias added to it, multiplied by some weight, and then an 'activation function' to introduce nonlinearity (you can think of it as adding a 3rd dimension of operations beyond multiplication and addition).
+![](/projects/4/image3.png)
+
+Each input gets a bias added to it, multiplied by some weight, and then an 'activation function' to introduce nonlinearity (you can think of it as adding a 3rd dimension of operations beyond multiplication and addition).
 
 Now this is the simplest form of it, and the form I will be starting with. The way our program "learns" is we fully randomize the weights and biases, throw it at the problem a zillion times, take the best-performing few, randomize only *some* things, and try again. The idea is kind of like simulated natural selection, where the best models live on and get to reproduce, with the chance of making better (or worse) models in the future.
 

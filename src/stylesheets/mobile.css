@@ -30,4 +30,10 @@
     width: 0px;
     border: 0px;
   }
+  .subheader{
+  font-size: clamp(10px,2.7vw,2rem);
+  }
+  .mediatitle{
+    font-size: clamp(10px,2.7vw,2rem);
+  }
 }

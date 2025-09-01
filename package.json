@@ -12,11 +12,17 @@
 		"cf-typegen": "wrangler types"
 	},
 	"dependencies": {
+		"front-matter": "^4.0.2",
+		"gray-matter": "^4.0.3",
+		"howler": "^2.2.4",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
 		"react-markdown": "^10.1.0",
 		"react-router-dom": "^7.6.3",
-		"rehype-raw": "^7.0.0"
+		"rehype-raw": "^7.0.0",
+		"remark-frontmatter": "^5.0.0",
+		"remark-stringify": "^11.0.0",
+		"to-vfile": "^8.0.0"
 	},
 	"devDependencies": {
 		"@cloudflare/vite-plugin": "^1.7.5",

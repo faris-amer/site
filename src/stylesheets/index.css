@@ -129,6 +129,7 @@ a:hover *{
   font-size: clamp(16px,7vw,72px);
   user-select:all;
   line-height: 1.5;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .contact .formItem{
@@ -136,14 +137,23 @@ a:hover *{
   align-items: center;
 
 }
-.contact  input{
+input{
   background-color: black;
   border: white;
   border-width: 2px;
-  border-style: double;
-  font-size: clamp(16px,3vw,72px);
   flex-grow: 1;
   field-sizing: content;
+}
+.contact input{
+  border-style: double;
+  font-size: clamp(16px,3vw,72px);
+}
+
+.mailinglist{
+  border-style: solid;
+  border-width: 1px;
+  min-width: 200px;
+  margin-left: 10px;
 }
 
 .greentext{
@@ -151,6 +161,7 @@ a:hover *{
 }
 
 .navbar{
+  background-color: black;
   display: flex;
   padding: 5px;
   align-items: center;

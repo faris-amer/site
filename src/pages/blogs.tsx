@@ -1,35 +1,61 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 import Navbar from "../components/navbar"
-import data from "../data.json"
 import Footer from "../components/footer"
 import Stars from "../components/backgrounds"
-import {useState } from "react"
+import { useEffect, useState } from "react"
+import fm from "front-matter"
 
-export default function Projects(){
-  const elements = []
+const markdownFiles = import.meta.glob('/src/blogs/*.md', { query: '?raw', import: 'default' });
+
+export type Frontmatter = {
+  title: string
+  date: string
+  summary: string
+}
+export type Post = {
+
+  frontmatter: Frontmatter
+  path: string
+}
+
+
+export default function Blogs(){
   const [currentStep, setCurrentStep] = useState(1);
+  const [posts, setPosts] = useState<Post[]>([]);
   const [forminput, setForminput] = useState({email: ''});
 
-  for (const [category, projects] of Object.entries(data.projects)) {
-    elements.push(
-      <div className="category" key={category}>
-        <h2>{category}</h2>
-        <div className="hl"></div>
-        <div className="projects-container">
-          {projects.slice().reverse().map((project: any) => (
-            <div key={project.id} className="projectEntry">
-              <a href={"/projects/" + project.name}>
-                <div className="project-image"><img src={project.icon}/></div>
-                <div className="project-name">{project.name}</div>
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    )
-  }
-    const handleChange = (event: any) => {
+  useEffect(() => {
+
+    const loadPosts = async () => {
+      const entries = await Promise.all(
+        Object.entries(markdownFiles).map(async ([path, load]) => {
+          const rawContent = await load();
+          const data = fm<Frontmatter>(rawContent as string);
+          const post: Post = {
+            frontmatter: {
+              title: data.attributes.title,
+              date: data.attributes.date,
+              summary: data.attributes.summary,
+            },
+            path,
+          };
+          return post;
+        })
+      );
+      setPosts(entries);
+    };
+
+    loadPosts();
+  }, []);
+
+  const postIndex = posts.map((x)=>(
+    <a key={x.path} className="bloglink" href={"/chatter/"+x.frontmatter.title}>
+      <div className="blogtitle">{x.frontmatter.title}</div>
+      <div className="date">{x.frontmatter.date}</div>
+      <div className="summary">{x.frontmatter.summary}</div>
+    </a>
+  ))
+  const handleChange = (event: any) => {
     const { name, value } = event.target;
       setForminput(prev => ({
         ...prev,
@@ -61,13 +87,15 @@ export default function Projects(){
     console.error("Submission error", err);
   }
   }
+
   return (
     <>
     <Stars />
       <main className="big-box">
         <Navbar />
         <div className="main-box">
-          {elements}
+        <div className="subheader">/chatter/ - talk rapidly or incessantly about trivial matters.</div>
+          {postIndex}
         </div>
         {currentStep ==1 &&
         <form onSubmit={handleSubmit}> 

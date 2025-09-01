@@ -24,8 +24,8 @@ export default function Landing(){
         <div className="sidebar">
           <div className="top">
             <a href="/projects">projects</a>
-            <a href="#">chatter</a>
-            <a href="#">professional</a>
+            <a href="/chatter">chatter</a>
+            <a href="/media">media</a>
           </div>
           <div className="bottom">
             <a href="/contact">contact</a>
@@ -38,7 +38,12 @@ export default function Landing(){
           </div>
           <div className="hl"></div>
           <div className="main-text">
-          I'm faris, I like to make things, and talk a lot.
+          I'm faris, I like to make things, and talk about whatever's on my mind.
+          <br/> 
+          <br/> 
+
+          Welcome to my space.
+          <br/> 
           <br/>
           </div>
         </div>

@@ -1,0 +1,23 @@
+.bloglink{
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap:10px;
+  margin: 5px;
+  .blogtitle{
+    font-weight: bold;
+    font-size: xx-large;
+  }
+}
+.subheader{
+  font-size: clamp(10px,2.2vw,24px);
+  align-self: center;
+  margin: 10px 0px 10px 0px;
+  color: gray;
+}
+
+.mediatitle{
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 150%;
+}

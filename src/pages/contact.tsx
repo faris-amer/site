@@ -2,6 +2,7 @@
 
 import { useState} from "react"
 import Navbar from "../components/navbar"
+import Stars from "../components/backgrounds"
 
 export default function Contact(){
   const [currentStep, setCurrentStep] = useState(1);
@@ -33,7 +34,6 @@ export default function Contact(){
   };
 
   const sendInfo = async () => {
-    
   try {
     const response = await fetch("https://script.google.com/macros/s/AKfycbxJuJ22vboON9uwByOqXOolTQMCDzmDnGZSRKmMMO-BppoEiXAP5tedBAy-xrvRM5ZeiQ/exec", {
       method: "POST",
@@ -41,7 +41,10 @@ export default function Contact(){
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: new URLSearchParams(forminput as Record<string, string>).toString(),
+      body: new URLSearchParams({
+        ...forminput,
+        sheetName: "Sheet1"
+      }).toString(),
     });
     console.log(response)
   } catch (err) {
@@ -50,18 +53,25 @@ export default function Contact(){
   }
   return(
     <>
+    <Stars/>
     <main className="main-page">
     <Navbar />
     <div className="hl">--------------------------------</div>
     email me anything, let's talk
     <div className="contact">
       farisamer569@gmail.com
+      <div>
       <a href="https://www.linkedin.com/in/fwamer/">&nbsp;&nbsp;linkedin</a>
-      <a href="https://github.com/faris-amer">&nbsp;&nbsp;&nbsp;&nbsp;github</a>
+      <a href="https://www.instagram.com/faris_amerr/">&nbsp;&nbsp;instagram</a>
+      </div>
+      <div>
+        <a href="https://github.com/faris-amer">&nbsp;&nbsp;&nbsp;&nbsp;github</a>
+        <a href="https://www.last.fm/user/zedzed__">&nbsp;&nbsp;last.fm</a>
+      </div>
       <form onSubmit={handleSubmit}>{currentStep == 1 && (
         
         <div className="formItem">
-          <a onClick={handleNextStep}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resume</a>
+          <a onClick={handleNextStep}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resume</a>
         </div>
       )}
 
@@ -76,6 +86,7 @@ export default function Contact(){
         <div className="formItem">
           <label htmlFor="message">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;why?:</label>
           <input id="message" name="message" value={forminput.message} onChange={handleChange} required></input>
+          <input type="hidden" name="sheetName" value="Sheet1"></input>
         </div>
       )}
       {currentStep == 4 && (
