@@ -7,7 +7,7 @@ import fm from "front-matter"
 import { useParams } from "react-router-dom"
 import type {Post, Frontmatter} from "./blogs"
 
-const markdownFiles = import.meta.glob('/src/blogs/*.md', { query: '?raw', import: 'default' });
+const markdownFiles = import.meta.glob('/src/content/blogs/*.md', { query: '?raw', import: 'default' });
 
 
 export default function BlogPage(){

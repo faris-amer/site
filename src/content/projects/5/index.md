@@ -18,7 +18,7 @@ The board had to:
 Quite a task, but I was excited to give it a shot, as it was the most complex board I'd designed to date. 
 
 To start with, I chose the MCU: an ESP32-S3 module. 
-![](/projects/5/image0.png)
+![](/src/content/projects/5/image0.png)
 
 Most teams that do custom ECU use STM32 chips, which have become somewhat of an industry standard, but I chose to stay away for a few reasons: the ESP32 module is incredibly easy to design for, as everything you need is setup inside the package. No external clocks, no external USB peripheral, no need for external flash memory or SRAM, it's all built into the package. Additionally, developing with esp-idf, Espressif's version of [FreeRTOS](https://www.freertos.org/Why-FreeRTOS/What-is-FreeRTOS), is a breeze. The documentation is incredibly well-written, in contrast to STM's lackluster HAL, and anyone who's been exposed to a little bit of Arduino can get the gist pretty easily. No special IDE required, you can write and compile your project all in VS Code by using [PlatformIO](https://platformio.org/), and debugging doesn't need any special hardware - a USB cable is enough. Need I go on? The ESP32 is great, especially for projects like this, where you need to do a lot and be flexible, with very little time to do it. I could go on and on about how much better of a choice this was, but I digress.
 
@@ -27,32 +27,32 @@ After doing my research and selecting a connector and supporting ICs, I got to w
 Below is the finished version:
 Inputs + Outputs:
 
-![](/projects/5/image1.png)
+![](/src/content/projects/5/image1.png)
 
 MCU:
 
-![](/projects/5/image2.png)
+![](/src/content/projects/5/image2.png)
 
 Various ICs:
 
-![](/projects/5/image3.png)
+![](/src/content/projects/5/image3.png)
 
 Power in + out:
 
-![](/projects/5/image4.png)
+![](/src/content/projects/5/image4.png)
 
 Analog filtering + buffering:
 
-![](/projects/5/image5.png)
+![](/src/content/projects/5/image5.png)
 
 PCB layout (without ground/power planes):
 
-![](/projects/5/image6.png)
+![](/src/content/projects/5/image6.png)
 
 And the finished product (I swear I'll take better photos in the future):
 
-![](/projects/5/image7.png)
-![](/projects/5/image8.png)
+![](/src/content/projects/5/image7.png)
+![](/src/content/projects/5/image8.png)
 
 ## Software
 Once we had the boards in, it was time to start writing software for it. The general architecture is a state machine, where the front ECU handles sensor input, throttle control, and state machine control, and the rear ECU handles data logging, light control, rear sensor input, and cooling control. The software is identical, but a jumper on the ECU board controls whether the ECU is rear or front, and the software acts accordingly. All data is stored on the on-board SD card, which logs every CAN message as well as all sensor data to later be uploaded to our data acquisition database.

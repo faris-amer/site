@@ -4,32 +4,32 @@
       {
         "id":1,
         "name":"first physics sim - collisions",
-        "icon":"/projects/icons/firstphysicssim.png"
+        "icon":"/src/content/projects/icons/firstphysicssim.png"
       },
       {
         "id":2,
         "name":"first PCB - Power distribution board",
-        "icon":"/projects/icons/PDM1.png"
+        "icon":"/src/content/projects/icons/PDM1.png"
       },
       {
         "id":3,
         "name":"WFR24 - EV architecture",
-        "icon":"/projects/icons/WFR24.jpg"
+        "icon":"/src/content/projects/icons/WFR24.jpg"
       },
       {
         "id":4,
         "name":"Balancing a Pendulum with AI",
-        "icon":"/projects/icons/pendulum.png"
+        "icon":"/src/content/projects/icons/pendulum.png"
       },
       {
         "id":5,
         "name":"WFR25 distributed ECU",
-        "icon":"/projects/icons/ECU25.png"
+        "icon":"/src/content/projects/icons/ECU25.png"
       },
       {
         "id":6,
         "name":"Messing with audio & fourier",
-        "icon":"/projects/icons/spectrogram.png"
+        "icon":"/src/content/projects/icons/spectrogram.png"
       }
     ]
   }

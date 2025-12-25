@@ -5,15 +5,13 @@ import Stars from "../components/backgrounds"
 import { useEffect, useState } from "react"
 import fm from "front-matter"
 
-const markdownFiles = import.meta.glob('/src/blogs/*.md', { query: '?raw', import: 'default' });
-
+const markdownFiles = import.meta.glob('/src/content/blogs/*.md', { query: '?raw', import: 'default' });
 export type Frontmatter = {
   title: string
   date: string
   summary: string
 }
 export type Post = {
-
   frontmatter: Frontmatter
   path: string
 }
@@ -42,6 +40,14 @@ export default function Blogs(){
           return post;
         })
       );
+
+      // sort posts by date (newest first). Safely parse dates and fallback to 0 for invalid dates
+      entries.sort((a, b) => {
+        const ta = Date.parse(a.frontmatter.date) || 0;
+        const tb = Date.parse(b.frontmatter.date) || 0;
+        return tb - ta;
+      });
+
       setPosts(entries);
     };
 
@@ -51,7 +57,7 @@ export default function Blogs(){
   const postIndex = posts.map((x)=>(
     <a key={x.path} className="bloglink" href={"/chatter/"+x.frontmatter.title}>
       <div className="blogtitle">{x.frontmatter.title}</div>
-      <div className="date">{x.frontmatter.date}</div>
+      <div className="listDate">{x.frontmatter.date}</div>
       <div className="summary">{x.frontmatter.summary}</div>
     </a>
   ))
@@ -98,7 +104,7 @@ export default function Blogs(){
           {postIndex}
         </div>
         {currentStep ==1 &&
-        <form onSubmit={handleSubmit}> 
+        <form onSubmit={handleSubmit} className="notiForm"> 
           <div className="formItem">
             <label htmlFor="email">get notifications when I post stuff:</label>
             <input className ="mailinglist" type="email" id="email" name="email"  value={forminput.email} onChange={handleChange} placeholder="Your email"/>

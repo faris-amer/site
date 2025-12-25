@@ -21,3 +21,31 @@
   font-size: 24px;
   line-height: 150%;
 }
+
+.blogdate{
+  margin-top: 10px;
+  color:rgb(179, 233, 255);
+}
+
+.listDate{
+  margin-bottom: 3px;
+  color:rgb(179, 233, 255);
+}
+
+.blog-container {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.blog-container em {
+  color:rgb(147, 206, 206);
+  font-style: italic;
+}
+
+.blog-container a {
+  color: rgb(101, 150, 255)
+}
+
+.blog-container img {
+  max-width: 100%;
+}

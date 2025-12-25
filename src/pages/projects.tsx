@@ -5,11 +5,11 @@ import data from "../data.json"
 import Footer from "../components/footer"
 import Stars from "../components/backgrounds"
 import {useState } from "react"
+import NotificationForm from "../components/notificationform";
 
 export default function Projects(){
   const elements = []
   const [currentStep, setCurrentStep] = useState(1);
-  const [forminput, setForminput] = useState({email: ''});
 
   for (const [category, projects] of Object.entries(data.projects)) {
     elements.push(
@@ -29,38 +29,7 @@ export default function Projects(){
       </div>
     )
   }
-    const handleChange = (event: any) => {
-    const { name, value } = event.target;
-      setForminput(prev => ({
-        ...prev,
-        [name]: value,
-      }));
-  }
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    setCurrentStep(currentStep+1)
-    console.log(forminput)
-    sendInfo()
-  };
-
-  const sendInfo = async () => {
-  try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbxJuJ22vboON9uwByOqXOolTQMCDzmDnGZSRKmMMO-BppoEiXAP5tedBAy-xrvRM5ZeiQ/exec", {
-      method: "POST",
-      mode: "no-cors", // required for no-cors Google Script
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams({
-        ...forminput,
-        sheetName: "Sheet2"
-      }).toString(),
-    });
-    console.log(response)
-  } catch (err) {
-    console.error("Submission error", err);
-  }
-  }
+  
   return (
     <>
     <Stars />
@@ -69,16 +38,8 @@ export default function Projects(){
         <div className="main-box">
           {elements}
         </div>
-        {currentStep ==1 &&
-        <form onSubmit={handleSubmit}> 
-          <div className="formItem">
-            <label htmlFor="email">get notifications when I post stuff:</label>
-            <input className ="mailinglist" type="email" id="email" name="email"  value={forminput.email} onChange={handleChange} placeholder="Your email"/>
-          </div>
-        </form>
-        }{currentStep ==2 &&
-          <div className="greentext">submitted!</div>
-        }
+        {currentStep === 1 && (<NotificationForm onSubmitSuccess={() => setCurrentStep(2)} />)}
+        {currentStep === 2 && (<div className="greentext">submitted!</div>)}
         <Footer/>
       </main>
     </>

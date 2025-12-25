@@ -41,6 +41,9 @@ export default function Landing(){
           I'm faris, I like to make things, and talk about whatever's on my mind.
           <br/> 
           <br/> 
+          the site is very much under construction, but feel free to look around in the meantime.
+          <br/> 
+          <br/> 
 
           Welcome to my space.
           <br/> 
