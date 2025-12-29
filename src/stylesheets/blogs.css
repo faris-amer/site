@@ -49,3 +49,10 @@
 .blog-container img {
   max-width: 100%;
 }
+
+.blog-container blockquote  * {
+  color:rgb(147, 206, 206);
+  font-style: italic;
+  border-left: 4px solid rgb(147, 206, 206); /* Optional: adds a vertical line */
+  padding-left: 15px; /* Optional: space between the line and text */
+}

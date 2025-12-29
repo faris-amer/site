@@ -6,7 +6,7 @@ export default function Media(){
 
   const media = [
     {
-      title: "Slugs",
+      title: "Slugs ★",
       link: "https://youtu.be/wYrNjPGgAAA"
     },
     {
@@ -30,7 +30,7 @@ export default function Media(){
       link: "https://youtu.be/EOTAWLaDa58"
     },
     {
-      title: "A rant on personal engineering projects",
+      title: "A rant on personal engineering projects ★",
       link: "https://youtu.be/4jgTCayWlwc"
     },
     {
@@ -38,7 +38,7 @@ export default function Media(){
       link:"https://youtu.be/-dwTpAU3Gdc"
     },
     {
-      title: "man drives around in a porsche giving engineering career advice",
+      title: "man drives around in a porsche giving engineering career advice ★",
       link: "https://youtu.be/2EYUKW2o-5Q"
     },
     {
@@ -50,13 +50,21 @@ export default function Media(){
       link: "https://youtu.be/g_XfjW5UFe4"
     },
     {
-      title: "Grinch's ultimatum",
+      title: "Grinch's ultimatum ★",
       link: "https://youtu.be/BuKft9LpL_0"
     },
     {
       title: "If Not Today, Then Tomorrow",
       link: "https://youtu.be/1dxaiQMK5mI"
-    }
+    },
+    {
+      title: "playstation jungle mix 01",
+      link: "https://youtu.be/Do5_wU9X1pc"
+    },
+    {
+      title: "Gell-Mann Amnesia and Michio Kaku",
+      link: "https://youtu.be/wBBnfu8N_J0"
+    },
   ]
 
   const mediaIndex = media.map((x)=>(

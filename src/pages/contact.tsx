@@ -57,16 +57,17 @@ export default function Contact(){
     <main className="main-page">
     <Navbar />
     <div className="hl">--------------------------------</div>
-    email me anything, let's talk
+    email me, let's yap
     <div className="contact">
       farisamer569@gmail.com
-      <div>
-      <a href="https://www.linkedin.com/in/fwamer/">&nbsp;&nbsp;linkedin</a>
-      <a href="https://www.instagram.com/faris_amerr/">&nbsp;&nbsp;instagram</a>
+      <div className="contact-links">
+        <a href="https://www.linkedin.com/in/fwamer/">&nbsp;linkedin</a>
+        <a href="https://github.com/faris-amer">&nbsp;&nbsp;github</a>
+        <a  href="https://www.last.fm/user/zedzed__">&nbsp;&nbsp;last.fm</a>
       </div>
-      <div>
-        <a href="https://github.com/faris-amer">&nbsp;&nbsp;&nbsp;&nbsp;github</a>
-        <a href="https://www.last.fm/user/zedzed__">&nbsp;&nbsp;last.fm</a>
+      <div className="contact-links">
+        <a href="https://www.instagram.com/faris_amerr/">&nbsp;&nbsp;&nbsp;instagram</a>
+        <a href="https://letterboxd.com/farisamer/">&nbsp;&nbsp;&nbsp;&nbsp;letterboxd</a>
       </div>
       <form onSubmit={handleSubmit}>{currentStep == 1 && (
         

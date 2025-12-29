@@ -27,22 +27,26 @@ Male friendships, generally, are deeply impersonal. Guys can be best friends, br
 
 There's a column in The Atlantic called 'Dear James' where readers ask James questions. [One reader asks](https://www.theatlantic.com/culture/2025/10/dear-james-male-friends-nongrowth-mindset/684552/?utm_source=facebook&utm_medium=paid&utm_campaign=2025_Content_FullPlacements_Prospecting_Sales_Standard&utm_content=102025_DearJamesGuyFriends_NA_NA_LearnMore&utm_term=FullPlacement_Advantage&referral=FB_PAID&utm_id=6754888483877&fbclid=PAZXh0bgNhZW0BMABhZGlkAAAGM9cvYT1zcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAadPRcwqwZYTkaOsCxCDRSOOGDOp9hBhVBcQpe-gZy268kzTj6Uy2BbhCMO_pQ_aem_5_guDF-xGWJv4krb1E7oOA&campaign_id=6754888483877&ad_id=6819593294477):
 
-*Dear James,*
-
-*Every Thursday for the past decade, I’ve sat with the same group of guys for a beer after work. I don’t think any of them has changed a bit in 10 years. Nothing. They’ve done nothing to grow themselves or their talents. Each one of them, if they were to die today, would get nearly the same eulogy: Nice man. Worked hard. Loved his children. Nothing wrong with any of that. Or is there?*
-
-*I love them—and also admit that I’m judging them. I can’t help wondering if they feel any compulsion to better themselves, to help their neighbors, to serve others. What do you think is our obligation to think of people beyond ourselves?*
+>Dear James,
+><br/>
+><br/>
+>Every Thursday for the past decade, I’ve sat with the same group of guys for a beer after work. I don’t think any of them has changed a bit in 10 years. Nothing. They’ve done nothing to grow themselves or their talents. Each one of them, if they were to die today, would get nearly the same eulogy: Nice man. Worked hard. Loved his children. Nothing wrong with any of that. Or is there?
+><br/>
+><br/>
+>I love them — and also admit that I’m judging them. I can’t help wondering if they feel any compulsion to better themselves, to help their neighbors, to serve others. What do you think is our obligation to think of people beyond ourselves?
 
 James responds:
 
-*Dear Reader,*
-
-*Here’s a question for you.*
-
-*Do you really love these guys? Do you appreciate each one in his radiant singularity, while knowing in your heart that behind and beyond this singularity you share the same immortal, compassionate essence? Can you look at any one of your buddies holding a beer and getting louder (or quieter) as the evening progresses, and recognize his struggle as a child of God in a fallen world?*
-
-*Probably not, right? Because if you loved them like that, you’d know that plenty has happened in their lives in 10 years, and that they have most certainly changed or been changed.*
-*...*
+>Dear Reader,
+><br/>
+><br/>
+>Here’s a question for you.
+><br/>
+><br/>
+>Do you really love these guys? Do you appreciate each one in his radiant singularity, while knowing in your heart that behind and beyond this singularity you share the same immortal, compassionate essence? Can you look at any one of your buddies holding a beer and getting louder (or quieter) as the evening progresses, and recognize his struggle as a child of God in a fallen world?*
+><br/>
+><br/>
+>Probably not, right? Because if you loved them like that, you’d know that plenty has happened in their lives in 10 years, and that they have most certainly changed or been changed...
 
 The reader can't possibly fathom anyone around him grown, changed, experienced things, even after over a decade of knowing these guys. Why is it this way? Are they ignorant, or have they just never been shown anything to the contrary?
 
@@ -50,15 +54,27 @@ Another example.
 
 [This video](https://youtu.be/psviS_7kwU8?si=HyBd9oyoFJTn9al1) woke me up a little, and if you can stomach the youtuber energy of it all, it's equal parts funny and sad. The game is simple, friends go around in a circle and ask each other questions about themselves. It's amazing just how little these people knew about each other, and it made me think about how little I knew about my friends. Some of my favorites (all of which couldn't be answered by any of the friends):
 
-*What's the name of my cat?*
+>What's the name of my cat?
 
-*When is my birthday? \[laughter\] Okay fine, just the month - and it's not June or August or September or October or January, by the way.*
+>When is my birthday? \[laughter\] 
+><br/>
+><br/>
+>Okay fine, just the month - and it's not June or August or September or October or January, by the way.
 
-*How many cousins do I have, within 5?* Guess: 5 | Answer: 40
+>How many cousins do I have, within 5?
+><br/>
+><br/>
+>Guess: 5 | Answer: 40
 
-*I went through a breakup this year. It was really bad. Had to move out of my apartment, I left New York. Broke my heart. What was her name?*<br/> Answer: *I had no idea why you moved or anything* <br/>*You have met her, by the way. [laughter]*
+>I went through a breakup this year. It was really bad. Had to move out of my apartment, I left New York. Broke my heart. What was her name?
+><br/>
+><br/>
+>Friend: I had no idea why you moved or anything, honestly.
+><br/>
+><br/>
+>You have met her, by the way. [laughter]
 
-*How old am I?*
+>How old am I?
 
 It goes on and on, and gets progressively more depressing behind the airs of drinks and a funny video idea with the boys. Think to yourself, how much do you *really* know about your friends? and how much do they know about you? Why don't we share these things about ourselves as men? It's nothing about our biology or male lizard brains, it's all about the ways we react. Throughout the video and its sequel, some real personal topics were brought up, and the group's first instinct was to laugh at every single one, then the gravity kinda hits and they all turn serious. We almost never uplift our friends, and in turn, our friends almost never uplift us.
 
@@ -120,12 +136,13 @@ We can start with ourselves, and the people closest to us first. Be around someo
 
 Check in on your friends, remember their birthdays. Get together with your group and surprise someone who hasn't been doing so hot lately. Ask them how their siblings are doing. Small things to bring you together. When the time's right, get into some real shit. Timing is key of course, and there's a time and place for every kind of conversation. But just be aware, and be ready. It really is a team sport, and trying to make it through alone isn't doing you or anyone around you any favors. But before your friends, start with yourself. You have to be someone they look up to, not down at, to make a difference.
 
-Are you truly, really honest with yourself? Does that thing really not bother you as much as you say it does? Why not?
-
-The cure to male loneliness might just be out on the pickleball court.
+Are you truly honest with yourself? Odds are, you've got some overdue introspection to do, start with that.
+<br/>
+<br/>
 
 thanks for reading
 
+<br/>
 
 here's a bunch of places i stole talking points from:
 

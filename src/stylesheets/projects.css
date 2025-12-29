@@ -126,3 +126,9 @@ p:has(img){
   font-family: monospace;
   color:lime
 }
+
+.clickable-image {
+  border: 2px;
+  border-style: solid;
+  border-color: rgb(0, 209, 87);
+}

@@ -2,6 +2,7 @@
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
 import Stars from "../components/backgrounds"
+import NotificationForm from "../components/notificationform";
 import { useEffect, useState } from "react"
 import fm from "front-matter"
 
@@ -20,8 +21,7 @@ export type Post = {
 export default function Blogs(){
   const [currentStep, setCurrentStep] = useState(1);
   const [posts, setPosts] = useState<Post[]>([]);
-  const [forminput, setForminput] = useState({email: ''});
-
+  
   useEffect(() => {
 
     const loadPosts = async () => {
@@ -61,38 +61,6 @@ export default function Blogs(){
       <div className="summary">{x.frontmatter.summary}</div>
     </a>
   ))
-  const handleChange = (event: any) => {
-    const { name, value } = event.target;
-      setForminput(prev => ({
-        ...prev,
-        [name]: value,
-      }));
-  }
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    setCurrentStep(currentStep+1)
-    console.log(forminput)
-    sendInfo()
-  };
-
-  const sendInfo = async () => {
-  try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbxJuJ22vboON9uwByOqXOolTQMCDzmDnGZSRKmMMO-BppoEiXAP5tedBAy-xrvRM5ZeiQ/exec", {
-      method: "POST",
-      mode: "no-cors", // required for no-cors Google Script
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams({
-        ...forminput,
-        sheetName: "Sheet2"
-      }).toString(),
-    });
-    console.log(response)
-  } catch (err) {
-    console.error("Submission error", err);
-  }
-  }
 
   return (
     <>
@@ -103,16 +71,8 @@ export default function Blogs(){
         <div className="subheader">/chatter/ - talk rapidly or incessantly about trivial matters.</div>
           {postIndex}
         </div>
-        {currentStep ==1 &&
-        <form onSubmit={handleSubmit} className="notiForm"> 
-          <div className="formItem">
-            <label htmlFor="email">get notifications when I post stuff:</label>
-            <input className ="mailinglist" type="email" id="email" name="email"  value={forminput.email} onChange={handleChange} placeholder="Your email"/>
-          </div>
-        </form>
-        }{currentStep ==2 &&
-          <div className="greentext">submitted!</div>
-        }
+        {currentStep === 1 && (<NotificationForm onSubmitSuccess={() => setCurrentStep(2)} />)}
+        {currentStep === 2 && (<div className="greentext">submitted!</div>)}
         <Footer/>
       </main>
     </>

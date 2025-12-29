@@ -25,25 +25,6 @@ Most teams that do custom ECU use STM32 chips, which have become somewhat of an 
 After doing my research and selecting a connector and supporting ICs, I got to work making the schematic. I learned from working with dev board from brands like Adafruit that having the board be interactive and configurable is extremely important, so I added a test button, a jumper for CAN termination, 4 jumpers for strapping pin configuration and configuring rear vs. front ECU, ability to flash via the built-in USB peripheral but also via a UART bridge, and more that made developing with this board extremely intuitive and easy.
 
 Below is the finished version:
-Inputs + Outputs:
-
-![](/src/content/projects/5/image1.png)
-
-MCU:
-
-![](/src/content/projects/5/image2.png)
-
-Various ICs:
-
-![](/src/content/projects/5/image3.png)
-
-Power in + out:
-
-![](/src/content/projects/5/image4.png)
-
-Analog filtering + buffering:
-
-![](/src/content/projects/5/image5.png)
 
 PCB layout (without ground/power planes):
 

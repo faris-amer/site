@@ -16,6 +16,7 @@ export default function Projects(){
       <div className="category" key={category}>
         <h2>{category}</h2>
         <div className="hl"></div>
+        <p>there's a lot I need to add here still (including non-engineering projects), chipping away at it slowly</p>
         <div className="projects-container">
           {projects.slice().reverse().map((project: any) => (
             <div key={project.id} className="projectEntry">

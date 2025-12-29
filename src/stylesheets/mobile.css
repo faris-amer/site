@@ -31,9 +31,12 @@
     border: 0px;
   }
   .subheader{
-  font-size: clamp(10px,2.7vw,2rem);
+  font-size: clamp(18px,2.7vw,2rem);
   }
   .mediatitle{
-    font-size: clamp(10px,2.7vw,2rem);
+    font-size: clamp(16px,2.7vw,1rem);
+  }
+  .projectEntry{
+    max-width: 100%;
   }
 }

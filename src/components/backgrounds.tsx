@@ -2,7 +2,7 @@ export default function Stars() {
 
   const stars = () =>{
      let str = ""
-     for(let i=0;i<40000;i++){
+     for(let i=0;i<80000;i++){
       const selection = Math.round(Math.random()*400)
       if(selection == 1){str+="."} 
       else if(selection == 2){ str+="*" } 
@@ -10,7 +10,7 @@ export default function Stars() {
       else if(selection == 4){ str+="`" } 
       else if(selection == 5){ str+="o" } 
       else{ str+=" " }
-      if(str.length % 300 ==0){
+      if(str.length % 600 ==0){
         str+="\n"
       }
      }
