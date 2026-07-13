@@ -200,4 +200,6 @@ input{
 
 .notiForm{
   margin: 10px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }

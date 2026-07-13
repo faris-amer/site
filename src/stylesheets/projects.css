@@ -127,8 +127,13 @@ p:has(img){
   color:lime
 }
 
+.project-container em {
+  color:rgb(147, 206, 206);
+  font-style: italic;
+}
+
 .clickable-image {
   border: 2px;
   border-style: solid;
-  border-color: rgb(0, 209, 87);
+  border-color: rgba(0, 84, 209, 1);
 }

@@ -1,27 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
-import Markdown from 'react-markdown'
-import rehypeRaw from 'rehype-raw'
-import frontMatter from 'front-matter';
+import Markdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
-export default function Blog(props: any) {
-  const [markdown, setMarkdown] = useState("");
-  const [meta, setMeta] = useState<any>({});
+export default function Blog({ blog }: { blog: any }) {
+  if (!blog) return <p>Loading…</p>;
 
-  if (!props.blog?.path) return;
-  fetch(props.blog.path)
-    .then((res) => res.text())
-    .then((text) => {
-      const parsed = frontMatter(text);
-      setMarkdown(parsed.body);
-      setMeta(parsed.attributes); 
-    })
-    .catch(() => setMarkdown("Could not load markdown file."));
-
-  return(
+  return (
     <div className="blog-container">
-      <div className="blogdate">{meta.date}</div>
-    <Markdown rehypePlugins={[rehypeRaw]}>{markdown}</Markdown>
+      <div className="blogdate">{blog.frontmatter.date}</div>
+      <Markdown rehypePlugins={[rehypeRaw]}>
+        {blog.content}
+      </Markdown>
     </div>
-  )
+  );
 }

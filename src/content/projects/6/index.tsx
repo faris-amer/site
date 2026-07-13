@@ -1,5 +1,4 @@
 import { Howl } from "howler";
-import { useState } from "react";
 
 let playing = false 
 
@@ -58,7 +57,7 @@ export default function project() {
       I've also always wanted to mess around with audio processing and never really understood what a spectrogram was (pictured below). 
       Today we solve all these problems.
     </p>
-    <img src="/src/content/projects/6/spectrogram.png"/>
+    <img src="/media/pictures/projects/icons/spectrogram.png"/>
     <h2>defining sound</h2>
     <p>
       Physically, sound is the oscillation of pressure waves through the air or another medium. These pressure waves bounce off things and hit your ears, which act as pickups,
@@ -72,11 +71,12 @@ export default function project() {
       <br/>
       I have below a 60Hz wave, and a 120Hz wave. 
       <br/>
-      You can click/tap on any image with a <span style={{color: "rgba(0, 84, 209, 1)"}}>blue</span> border to listen to it. Click again to stop!
+      You can click/tap on any image with a <span style={{color: "rgba(0, 84, 209, 1)"}}>blue</span> border to listen to it. Click again to stop! 
+      If you don't have headphones on or decent speakers, you won't be able to hear the lower frequencies ~60-512Hz.
     </p>
-    <img src="/src/content/projects/6/60hz.png" className="clickable-image" onClick={()=>playSound("f60")}/>
-    <img src="/src/content/projects/6/240hz.png" className="clickable-image" onClick={()=>playSound("f240")}/>
-    <img src="/src/content/projects/6/60+240hz.png" className="clickable-image" onClick={()=>playSound("f60240")}/>
+    <img src="/media/pictures/projects/6/60hz.png" className="clickable-image" onClick={()=>playSound("f60")}/>
+    <img src="/media/pictures/projects/6/240hz.png" className="clickable-image" onClick={()=>playSound("f240")}/>
+    <img src="/media/pictures/projects/6/60+240hz.png" className="clickable-image" onClick={()=>playSound("f60240")}/>
     <p>
       The higher the frequency, the higher the pitch of the tone. You can see in the combined tone, the two waves add and subtract from each other; when they are both high, 
       the combined tone is higher, and vice versa. Already with two tones we see some interesting behavior. If you stack two tones that are very close together, you get a 
@@ -84,11 +84,11 @@ export default function project() {
       it looks like they're blinking in sync, and sometimes on alternate timings? The same thing is happening with our waves. When they're in sync, they amplify each other, 
       and when they're out of sync, they negate each other. This constant sync-and-unsync causes the sound to "beat".
     </p>
-    <img src="/src/content/projects/6/beat.png" className="clickable-image" onClick={()=>playSound("beat")}/>
+    <img src="/media/pictures/projects/6/beat.png" className="clickable-image" onClick={()=>playSound("beat")}/>
     <p>
       We can also experiment by generating non-sinusoidal wave shapes. Here's a square wave for example: (warning, it's loud!)
     </p>
-    <img src="/src/content/projects/6/square.png" className="clickable-image" onClick={()=>playSound("square")}/>
+    <img src="/media/pictures/projects/6/square.png" className="clickable-image" onClick={()=>playSound("square")}/>
     <p>
     Now while this is a 60Hz square wave, in reality - it's a combination of many, many frequencies, with the **fundamental** 
     frequency being at 60hz. This'll make sense later, but for now just keep that in mind. Let's go back to our example with 
@@ -99,11 +99,11 @@ export default function project() {
     and *phase angle*, or how far left/right we move the wave (because not every wave starts at 0). For now, we can ignore the phase angle, and 
     just graph the magnitudes. Let's look at our first example:
     </p>
-    <img src="/src/content/projects/6/fourier1.png"/>
+    <img src="/media/pictures/projects/6/fourier1.png"/>
     <p>
       One spike at 60Hz and one at 240, at equal magnitudes - exactly what we expected! Now what about that square wave?
     </p>
-    <img src="/src/content/projects/6/fourier2.png"/>
+    <img src="/media/pictures/projects/6/fourier2.png"/>
     <p>
       Here we see some interesting math - notice how the main frequency starts at 60, and then every other frequency 
       that's a multiple of 60? and notice how they all go down as multiples of pi? if the fundemental is at 1, then the 
@@ -112,7 +112,7 @@ export default function project() {
       <br/>
       What does this look like in the time domain? well:
     </p>
-    <img src="/src/content/projects/6/square-decon.png"/>
+    <img src="/media/pictures/projects/6/square-decon.png"/>
     <p>
       Now that we have an intuition for waves and adding them together, let's look at a another useful tool we can use to our advantage - 
       the spectrogram. A waveform graph (The graphs i've been showing you so far) show you the amplitude (loudness) of a signal over time, 
@@ -120,7 +120,7 @@ export default function project() {
       waveform, but it's hard to tell exactly what frequencies are involved, especially when you have multiple overlapping frequencies. 
       For example, here's a frequency sweep tone - moving from one frequency to another, can you guess the minimum and maximum frequencies? 
     </p>
-    <img src="/src/content/projects/6/upsweep.png" className="clickable-image" onClick={()=>playSound("upsweep")}/>
+    <img src="/media/pictures/projects/6/upsweep.png" className="clickable-image" onClick={()=>playSound("upsweep")}/>
     <p>(it's 128 and 512 Hz)</p>
     <p>
       As you can see, the spectrogram is much easier to read, especially for longer audio clips. The scale is logarithmic because generally
@@ -129,8 +129,8 @@ export default function project() {
       in reality (in this case), we have a single frequency, but due to the way computers work, we see some noise in the spectrogram stretching 
       below and above our single frequency at lower amplitudes. You can ignore these for now. So, we have the spectrogram now, let's try a few examples:
     </p>
-    <img src="/src/content/projects/6/crossweep.png"className="clickable-image" onClick={()=>playSound("crossweep")}/>
-    <img src="/src/content/projects/6/B5.png" className="clickable-image" onClick={()=>playSound("B5")}/>
+    <img src="/media/pictures/projects/6/crossweep.png"className="clickable-image" onClick={()=>playSound("crossweep")}/>
+    <img src="/media/pictures/projects/6/B5.png" className="clickable-image" onClick={()=>playSound("B5")}/>
 
     <p>The first example is (as you can probably see) just two frequency sweeps, starting at different points and increasing/decreasing as 
       the clip plays. Below that, you can see a B5 note from a piano. The piano is synthetic (some random MIDI piano I found online), but 
@@ -144,22 +144,22 @@ export default function project() {
         The main thing that makes a note unique is its *fundemental frequency*, or the frequency that's the highest 
         amplitude in that note. You'll notice in the B5 example above, the "brightest" frequency is ~987 Hz, which 
         is the fundemental frequency for a B5 note. From there, multiples of the fundemental frequency (1974Hz, 3948Hz, ...) exist at lower amplitudes all the way up the audible range.</p>
-    <img src="/src/content/projects/6/B2-6.png" className="clickable-image" onClick={()=>playSound("B26")}/>
+    <img src="/media/pictures/projects/6/B2-6.png" className="clickable-image" onClick={()=>playSound("B26")}/>
     <p>
       now what if we try to make our own instrument with the tools we have? i'll create a 'main' frequency, and quieter frequencies at the same intervals as a regular note,
       then add a little "decay" so it sounds like a note being struck then fading away with time:
     </p>
-    <img src="/src/content/projects/6/B5-custom.png" className="clickable-image" onClick={()=>playSound("Bcustom")}/>
+    <img src="/media/pictures/projects/6/B5-custom.png" className="clickable-image" onClick={()=>playSound("Bcustom")}/>
     <p>
       now listen to both, side by side:
     </p>
-    <img src="/src/content/projects/6/B2-6-custom.png" className="clickable-image" onClick={()=>playSound("Bcsweep")}/>
-    <img src="/src/content/projects/6/B2-6.png" className="clickable-image" onClick={()=>playSound("B26")}/>
+    <img src="/media/pictures/projects/6/B2-6-custom.png" className="clickable-image" onClick={()=>playSound("Bcsweep")}/>
+    <img src="/media/pictures/projects/6/B2-6.png" className="clickable-image" onClick={()=>playSound("B26")}/>
     <p>
       NEAT! Let's try to play a short melody with some chords now:
     </p>
-    <img src="/src/content/projects/6/blackparade-custom.png" className="clickable-image" onClick={()=>playSound("bpcustom")}/>
-    <img src="/src/content/projects/6/blackparade.png" className="clickable-image" onClick={()=>playSound("bp")}/>
+    <img src="/media/pictures/projects/6/blackparade-custom.png" className="clickable-image" onClick={()=>playSound("bpcustom")}/>
+    <img src="/media/pictures/projects/6/blackparade.png" className="clickable-image" onClick={()=>playSound("bp")}/>
 
     <h2>just like lego</h2>
     <p>
@@ -169,23 +169,23 @@ export default function project() {
       <br/>
       I'm going to start with a hi-hat, and run a fourier transform over the sound clip to find the power spectrum:
     </p>
-    <img src="/src/content/projects/6/hihat.png" className="clickable-image" onClick={()=>playSound("hihat")}/>
+    <img src="/media/pictures/projects/6/hihat.png" className="clickable-image" onClick={()=>playSound("hihat")}/>
     <p>
       and then I'll build it back up, starting with the first frequency: (warning it's loud!)
     </p>
-    <img src="/src/content/projects/6/hihat1.png" className="clickable-image" onClick={()=>playSound("hihat1")}/>
+    <img src="/media/pictures/projects/6/hihat1.png" className="clickable-image" onClick={()=>playSound("hihat1")}/>
     <p>
       and then build up to 10:
     </p>
-    <img src="/src/content/projects/6/hihat10.png" className="clickable-image" onClick={()=>playSound("hihat10")}/>
+    <img src="/media/pictures/projects/6/hihat10.png" className="clickable-image" onClick={()=>playSound("hihat10")}/>
     <p>
       and then 1,000:
     </p>
-    <img src="/src/content/projects/6/hihat1000.png" className="clickable-image" onClick={()=>playSound("hihat1000")}/>
+    <img src="/media/pictures/projects/6/hihat1000.png" className="clickable-image" onClick={()=>playSound("hihat1000")}/>
     <p>
       and then 10,000 we get an almost perfect recreation of the original sound:
     </p>
-    <img src="/src/content/projects/6/hihat10000.png" className="clickable-image" onClick={()=>playSound("hihat10000")}/>
+    <img src="/media/pictures/projects/6/hihat10000.png" className="clickable-image" onClick={()=>playSound("hihat10000")}/>
     <p>
       an interesting thing that's happening here is as we add frequencies, our sound actually gets quieter due to subtractive interference;
       it's cool that the most important parts of a sound are the frequencies that "carve" away the rest and allow for quiet  periods in the audio.

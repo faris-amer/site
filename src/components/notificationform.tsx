@@ -18,6 +18,7 @@ export default function NotificationForm({ onSubmitSuccess }: NotificationFormPr
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
+    onSubmitSuccess(); // notify parent
 
     try {
       await fetch(
@@ -35,7 +36,6 @@ export default function NotificationForm({ onSubmitSuccess }: NotificationFormPr
         }
       );
       console.log("submitted:", forminput);
-      onSubmitSuccess(); // notify parent
     } catch (err) {
       console.error("Submission error", err);
     }

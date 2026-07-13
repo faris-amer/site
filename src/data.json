@@ -4,32 +4,37 @@
       {
         "id":1,
         "name":"first physics sim - collisions",
-        "icon":"/src/content/projects/icons/firstphysicssim.png"
+        "icon":"/media/pictures/projects/icons/firstphysicssim.png"
       },
       {
         "id":2,
         "name":"first PCB - Power distribution board",
-        "icon":"/src/content/projects/icons/PDM1.png"
+        "icon":"/media/pictures/projects/icons/PDM1.png"
       },
       {
         "id":3,
         "name":"WFR24 - EV architecture",
-        "icon":"/src/content/projects/icons/WFR24.jpg"
+        "icon":"/media/pictures/projects/icons/WFR24.jpg"
       },
       {
         "id":4,
         "name":"Balancing a Pendulum with AI",
-        "icon":"/src/content/projects/icons/pendulum.png"
+        "icon":"/media/pictures/projects/icons/pendulum.png"
       },
       {
         "id":5,
         "name":"WFR25 distributed ECU",
-        "icon":"/src/content/projects/icons/ECU25.png"
+        "icon":"/media/pictures/projects/icons/ECU25.png"
       },
       {
         "id":6,
         "name":"Messing with audio & fourier",
-        "icon":"/src/content/projects/icons/spectrogram.png"
+        "icon":"/media/pictures/projects/icons/spectrogram.png"
+      },
+      {
+        "id":7,
+        "name": "inverse kinematics and spider walking",
+        "icon":"/media/pictures/projects/icons/spider.png"
       }
     ]
   }

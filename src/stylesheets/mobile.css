@@ -39,4 +39,19 @@
   .projectEntry{
     max-width: 100%;
   }
+  .bloglink{
+    display: inline-block;
+    flex-direction: row;
+    align-items: end;
+    gap:10px;
+    margin: 5px;
+    .blogtitle{
+      font-weight: bold;
+      font-size: clamp(24px,2.7vw,1rem);
+    }
+  }
+  .main-box .listDate{
+    font-size: clamp(16px,2.7vw,1rem);
+    margin-bottom: 0px;
+  }
 }

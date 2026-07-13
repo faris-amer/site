@@ -2,6 +2,7 @@
 title: alive internet theory
 date: November 18, 2025
 summary:
+order: 2
 ---
 # alive internet theory
 ## the dead internet theory

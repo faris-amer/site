@@ -2,6 +2,7 @@
 title: self expression & the void
 date: August 8, 2025
 summary:
+order: 1
 ---
 # self expression & the void
 

@@ -1,80 +1,94 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Navbar from "../components/navbar"
-import Footer from "../components/footer"
-import Stars from "../components/backgrounds"
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
+import Stars from "../components/backgrounds";
 import NotificationForm from "../components/notificationform";
-import { useEffect, useState } from "react"
-import fm from "front-matter"
+import { useMemo, useState } from "react";
+import fm from "front-matter";
 
-const markdownFiles = import.meta.glob('/src/content/blogs/*.md', { query: '?raw', import: 'default' });
+// ✅ Correct glob
+const markdownFiles = import.meta.glob(
+  "../content/blogs/*.md",
+  { as: "raw", eager: true }
+) as Record<string, string>;
+
 export type Frontmatter = {
-  title: string
-  date: string
-  summary: string
-}
+  title: string;
+  date: string;
+  summary: string;
+  order?: number | string;
+};
+
 export type Post = {
-  frontmatter: Frontmatter
-  path: string
-}
+  slug: string;
+  content: string;
+  frontmatter: Frontmatter;
+};
 
-
-export default function Blogs(){
+export default function Blogs() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [posts, setPosts] = useState<Post[]>([]);
-  
-  useEffect(() => {
 
-    const loadPosts = async () => {
-      const entries = await Promise.all(
-        Object.entries(markdownFiles).map(async ([path, load]) => {
-          const rawContent = await load();
-          const data = fm<Frontmatter>(rawContent as string);
-          const post: Post = {
-            frontmatter: {
-              title: data.attributes.title,
-              date: data.attributes.date,
-              summary: data.attributes.summary,
-            },
-            path,
-          };
-          return post;
-        })
-      );
+  // ✅ Build posts once
+  const posts: Post[] = useMemo(() => {
+    const entries = Object.entries(markdownFiles).map(([path, raw]) => {
+      const parsed = fm<Frontmatter>(raw);
 
-      // sort posts by date (newest first). Safely parse dates and fallback to 0 for invalid dates
-      entries.sort((a, b) => {
-        const ta = Date.parse(a.frontmatter.date) || 0;
-        const tb = Date.parse(b.frontmatter.date) || 0;
-        return tb - ta;
-      });
+      return {
+        slug: path.split("/").pop()!.replace(".md", ""),
+        content: parsed.body,
+        frontmatter: parsed.attributes,
+      };
+    });
 
-      setPosts(entries);
-    };
+    // sort by YAML order, highest first; fall back to date for missing values
+    entries.sort((a, b) => {
+      const orderA = Number(a.frontmatter.order ?? 0) || 0;
+      const orderB = Number(b.frontmatter.order ?? 0) || 0;
 
-    loadPosts();
+      if (orderA !== orderB) {
+        return orderB - orderA;
+      }
+
+      const ta = Date.parse(a.frontmatter.date) || 0;
+      const tb = Date.parse(b.frontmatter.date) || 0;
+      return tb - ta;
+    });
+
+    return entries;
   }, []);
-
-  const postIndex = posts.map((x)=>(
-    <a key={x.path} className="bloglink" href={"/chatter/"+x.frontmatter.title}>
-      <div className="blogtitle">{x.frontmatter.title}</div>
-      <div className="listDate">{x.frontmatter.date}</div>
-      <div className="summary">{x.frontmatter.summary}</div>
-    </a>
-  ))
 
   return (
     <>
-    <Stars />
+      <Stars />
       <main className="big-box">
         <Navbar />
         <div className="main-box">
-        <div className="subheader">/chatter/ - talk rapidly or incessantly about trivial matters.</div>
-          {postIndex}
+          <div className="subheader">
+            /chatter/ - talk rapidly or incessantly about trivial matters.
+          </div>
+
+          {posts.map((post) => (
+            <a
+              key={post.slug}
+              className="bloglink"
+              href={`/chatter/${post.slug}`}
+            >
+              <div className="blogtitle">{post.frontmatter.title}</div>
+              <div className="listDate">{post.frontmatter.date}</div>
+              <div className="summary">{post.frontmatter.summary}</div>
+            </a>
+          ))}
         </div>
-        {currentStep === 1 && (<NotificationForm onSubmitSuccess={() => setCurrentStep(2)} />)}
-        {currentStep === 2 && (<div className="greentext">submitted!</div>)}
-        <Footer/>
+
+        {currentStep === 1 && (
+          <NotificationForm onSubmitSuccess={() => setCurrentStep(2)} />
+        )}
+        {currentStep === 2 && (
+          <div className="greentext">submitted!</div>
+        )}
+
+        <Footer />
       </main>
     </>
-  )
+  );
 }

@@ -65,6 +65,14 @@ export default function Media(){
       title: "Gell-Mann Amnesia and Michio Kaku",
       link: "https://youtu.be/wBBnfu8N_J0"
     },
+    {
+      title: "Beautiful World",
+      link: "https://youtu.be/uR0dnQFsQHg"
+    },
+    {
+      title: "hh20250607 9 10 ESI4000",
+      link: "https://youtu.be/5azMciojDfY"
+    },
   ]
 
   const mediaIndex = media.map((x)=>(
